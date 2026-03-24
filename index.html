@@ -3,77 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunday School Parent Note - March 29</title>
+    <title>Uzima Class - Parent Note</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb; }
-        .card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 8px solid #4f46e5; }
-        h1 { color: #1e293b; text-align: center; margin-bottom: 5px; font-size: 1.5rem; }
-        .date { text-align: center; color: #64748b; font-style: italic; margin-bottom: 20px; }
-        h2 { color: #c2410c; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; margin-top: 25px; font-size: 1.2rem; }
-        .highlight { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin: 15px 0; border-radius: 4px; }
-        .verse { text-align: center; font-weight: 600; color: #1d4ed8; margin: 20px 0; background: #eff6ff; padding: 15px; border-radius: 8px; }
-        .contact { background: #f0f9ff; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.9rem; }
-        .footer { margin-top: 30px; text-align: center; font-size: 0.85rem; color: #94a3b8; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
+        :root {
+            --primary-green: #2d5a27; /* Deep Forest Green */
+            --light-green: #f0f4f0;
+            --accent-green: #e1ede1;
+            --text-dark: #1a2e1a;
+            --text-muted: #4a5d4a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9f7;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid #d1d9d1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Header Section mimicking your original box top */
+        .header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .content-padding {
+            padding: 30px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Section Headings */
+        h2 {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .section-box {
+            background: var(--light-green);
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+            margin: 15px 0;
+        }
+
+        .verse-box {
+            text-align: center;
+            background: var(--accent-green);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-weight: 600;
+            color: var(--primary-green);
+            border: 1px dashed var(--primary-green);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .reminder-card {
+            background: #fff;
+            border: 1px solid var(--accent-green);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .reminder-card strong {
+            display: block;
+            color: var(--primary-green);
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            background: var(--light-green);
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #d1d9d1;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 500px) {
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>🌟 Sunday School Parent Note 🌟</h1>
-        <p class="date">March 29th, 2026</p>
 
-        <p>Dear Parents & Guardians, Grace and peace to you! Thank you for faithfully bringing your children to Sunday School[cite: 6, 7]. Your partnership is vital as we raise these little ones in the love of Jesus Christ[cite: 8].</p>
-
-        <h2>✝️ Today's Lesson: Jesus Died and Rose Again!</h2>
-        <p><strong>Scripture:</strong> Matthew 27:32-56 & 28:1-10 [cite: 11, 12, 13]</p>
-        <ul>
-            <li>Jesus died on the cross for our sins[cite: 14].</li>
-            <li>He was placed in a tomb with a large stone[cite: 15].</li>
-            <li>On Sunday morning, Jesus came back to life! [cite: 16]</li>
-            <li>The tomb was EMPTY[cite: 17].</li>
-        </ul>
-
-        <div class="highlight">
-            <strong>🎨 Today's Craft: "God's Love for me"</strong><br>
-            Children traced their hands next to a cross to remember that God's love reaches them personally[cite: 18, 19].
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Sunday School Parent Note 🌟</h1>
+            <p>Uzima Class • March 29th, 2026</p>
         </div>
 
-        <div class="verse">
-            "Let us fix our eyes on Jesus... who for the joy set before Him endured the cross."<br>— Hebrews 12:2 [cite: 20, 22]
-        </div>
+        <div class="content-padding">
+            <div class="intro">
+                Dear Parents & Guardians, <br>
+                Grace and peace to you! Thank you for faithfully bringing your children to Sunday School[cite: 6, 7]. Your partnership means everything to us as we raise these little ones in the knowledge and love of Jesus Christ[cite: 8].
+            </div>
 
-        <h2>💬 Ask Your Child Tonight:</h2>
-        <ul>
-            <li>What happened to Jesus on the cross? [cite: 24]</li>
-            <li>What happened on Sunday morning? [cite: 25]</li>
-            <li>Why is Easter happy and not sad? [cite: 26]</li>
-            <li>How high does God's love reach? [cite: 27]</li>
-        </ul>
+            <h2>✝️ Today's Lesson</h2>
+            <div class="section-box">
+                <strong>Jesus Died and Rose Again!</strong> [cite: 11]<br>
+                <small>Scripture: Matthew 27:32-56 & 28:1-10 [cite: 12, 13]</small>
+                <ul>
+                    <li>Jesus was hurt on a cross for our sins[cite: 14].</li>
+                    <li>He was placed in a tomb with a big stone[cite: 15].</li>
+                    <li>On Sunday morning, Jesus came back to life! [cite: 16]</li>
+                    <li>The tomb was EMPTY — He is Risen! [cite: 17]</li>
+                </ul>
+            </div>
 
-        <h2>🏠 Family Worship Idea:</h2>
-        <p>Read Matthew 28:1-10 together and pray: <em>"Thank you God for loving us. Help us obey you! Amen!"</em> [cite: 28, 29]</p>
+            <h2>🎨 Today's Craft</h2>
+            <p><strong>"God's Love for Me"</strong>: Children traced their hands next to a cross to remember that God's love reaches to THEM personally! [cite: 18, 19]</p>
 
-        <h2>📢 Important Reminders:</h2>
-        <ul>
-            <li><strong>💧 Water:</strong> It is HOT in the afternoons; please carry a water bottle to stay hydrated[cite: 32, 33, 34, 35].</li>
-            <li><strong>🚽 Bathroom:</strong> Please take children to the washroom BEFORE class to avoid disruptions[cite: 36, 37, 38].</li>
-            <li><strong>⏰ Pick-up:</strong> Please arrive on time[cite: 39, 40].</li>
-        </ul>
+            <div class="verse-box">
+                "Let us fix our eyes on Jesus... who for the joy set before Him endured the cross." [cite: 20, 21]<br>
+                <span style="font-weight: normal; font-size: 0.9rem;">— Hebrews 12:2 [cite: 22]</span>
+            </div>
 
-        <h2>🗓️ Next Week (April 5th):</h2>
-        <p><strong>Family Easter Sunday:</strong> We will all gather in the adult service (big church)[cite: 43, 44].</p>
+            <div class="grid">
+                <div class="reminder-card">
+                    <strong>💬 Ask Your Child:</strong>
+                    <ul>
+                        <li>What happened to Jesus on the cross? [cite: 24]</li>
+                        <li>Why is Easter happy and not sad? [cite: 26]</li>
+                        <li>How high does God's love reach? [cite: 27]</li>
+                    </ul>
+                </div>
+                <div class="reminder-card">
+                    <strong>🏠 Family Worship:</strong>
+                    Read Matthew 28:1-10 together and pray: "Thank you God for loving us. Help us obey you! Amen!" [cite: 28, 29]
+                </div>
+            </div>
 
-        <div class="contact">
-            <strong>📞 Contact Information:</strong><br>
-            Hotline: +254724555527 [cite: 49]<br>
-            Email: lewismgichuki@gmail.com [cite: 50]
+            <h2>📢 Important Reminders</h2>
+            <div class="grid">
+                <div class="reminder-card">
+                    <strong>💧 Hydration</strong>
+                    It is HOT in the afternoon; please carry water in a water bottle[cite: 33, 34, 35].
+                </div>
+                <div class="reminder-card">
+                    <strong>🚽 Focus</strong>
+                    Please take your child to the washroom BEFORE class[cite: 36, 37].
+                </div>
+            </div>
+            <p style="margin-top: 15px;"><strong>⏰ Pick-up:</strong> Please arrive on time[cite: 40].</p>
+
+            <h2>🗓️ Coming Up</h2>
+            <div class="section-box" style="background: var(--accent-green);">
+                <strong>April 5th: Family Easter Sunday</strong> [cite: 43]<br>
+                We all gather together in the adult service (big church)[cite: 44].
+            </div>
         </div>
 
         <div class="footer">
-            <p>"He is not here; he has risen, just as he said." — Matthew 28:6 [cite: 56]</p>
-            <p><strong>Blessings, Lewis Gichuki</strong><br>Uzima Class Teacher [cite: 59, 60, 61]</p>
+            <p style="font-size: 1.1rem; color: var(--primary-green); font-weight: bold;">
+                "He is not here; he has risen, just as he said." [cite: 56]<br>
+                <span style="font-weight: normal; font-size: 0.9rem;">— Matthew 28:6</span>
+            </p>
+            
+            <div class="contact-info">
+                <strong>Lewis Gichuki</strong> [cite: 59]<br>
+                Sunday School Teacher, Uzima Class [cite: 60, 61]<br>
+                <br>
+                📞 Hotline: +254724555527 [cite: 49]<br>
+                📧 Email: lewismgichuki@gmail.com [cite: 50]
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 20px;">Thank you for partnering with us in your child's faith journey[cite: 54].</p>
         </div>
     </div>
+
 </body>
 </html>
