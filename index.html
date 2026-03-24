@@ -2,231 +2,414 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzima Class - Parent Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Uzima Class | Sunday School Parent Note • Easter Hope</title>
     <style>
-        :root {
-            --primary-green: #2d5a27; /* Deep Forest Green */
-            --light-green: #f0f4f0;
-            --accent-green: #e1ede1;
-            --text-dark: #1a2e1a;
-            --text-muted: #4a5d4a;
-            --white: #ffffff;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f9f7;
-            color: var(--text-dark);
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+            background: linear-gradient(145deg, #e9f3e6 0%, #d4e2cf 100%);
+            font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+            color: #1c2f1a;
         }
 
-        .container {
-            max-width: 650px;
+        /* main card container */
+        .note-card {
+            max-width: 900px;
             margin: 0 auto;
-            background: var(--white);
-            border: 1px solid #d1d9d1;
-            border-radius: 8px;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
         }
 
-        /* Header Section mimicking your original box top */
-        .header {
-            background-color: var(--primary-green);
-            color: var(--white);
+        /* header with soft easter accent */
+        .hero {
+            background: linear-gradient(135deg, #2c6e2c 0%, #1f4f1f 100%);
+            padding: 2rem 2rem 1.8rem;
             text-align: center;
-            padding: 40px 20px;
+            color: white;
+            border-bottom: 6px solid #f9c56b;
         }
 
-        .header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .hero h1 {
+            font-size: 1.9rem;
+            letter-spacing: -0.3px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .header p {
-            margin: 10px 0 0;
-            opacity: 0.9;
-            font-style: italic;
+        .hero h1 span {
+            background: #f9c56b;
+            font-size: 1.7rem;
+            padding: 0 0.2rem;
+            border-radius: 60px;
+            display: inline-block;
         }
 
-        .content-padding {
-            padding: 30px;
+        .hero .date {
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
         }
 
-        .intro {
-            font-size: 1.1rem;
-            border-bottom: 2px solid var(--light-green);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+        /* inner padding */
+        .content-inner {
+            padding: 2rem 2rem 2rem;
         }
 
-        /* Section Headings */
-        h2 {
-            color: var(--primary-green);
-            font-size: 1.3rem;
+        /* greeting */
+        .greeting {
+            background: #fef9e8;
+            padding: 1.4rem 1.8rem;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid #f9c56b;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .greeting p {
+            margin-bottom: 0.5rem;
+        }
+
+        .greeting strong {
+            color: #2c6e2c;
+        }
+
+        /* section styles */
+        .section {
+            margin-bottom: 2.2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f4f1f;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-top: 30px;
+            border-bottom: 3px solid #e2e9de;
+            padding-bottom: 0.5rem;
         }
 
-        .section-box {
-            background: var(--light-green);
-            border-left: 4px solid var(--primary-green);
-            padding: 20px;
-            border-radius: 0 4px 4px 0;
-            margin: 15px 0;
+        .section-title i {
+            font-size: 1.6rem;
         }
 
-        .verse-box {
-            text-align: center;
-            background: var(--accent-green);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 30px 0;
-            font-weight: 600;
-            color: var(--primary-green);
-            border: 1px dashed var(--primary-green);
-        }
-
-        .grid {
+        .card-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.3rem;
+            margin: 1rem 0 1rem;
         }
 
-        .reminder-card {
-            background: #fff;
-            border: 1px solid var(--accent-green);
-            padding: 15px;
-            border-radius: 8px;
+        .info-card {
+            background: #fafbf8;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.2rem;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2ecdf;
+            transition: transform 0.1s ease;
         }
 
-        .reminder-card strong {
-            display: block;
-            color: var(--primary-green);
-            margin-bottom: 5px;
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2c6e2c;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .footer {
-            background: var(--light-green);
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
+        .bullet-list {
+            padding-left: 1.3rem;
+            margin-top: 0.5rem;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.55rem;
+        }
+
+        .scripture {
+            background: #ecf6e9;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            font-family: monospace;
             font-size: 0.9rem;
-            color: var(--text-muted);
+            display: inline-block;
+            margin-bottom: 1rem;
         }
 
-        .contact-info {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #d1d9d1;
+        .memory-verse {
+            background: #fef1cf;
+            border-radius: 1.5rem;
+            padding: 1.6rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border: 1px solid #ffe0a3;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.02);
         }
 
-        ul {
-            padding-left: 20px;
-            margin: 10px 0;
+        .memory-verse p {
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 500;
+            color: #2c4b2a;
         }
 
-        li {
-            margin-bottom: 8px;
+        .memory-verse .ref {
+            margin-top: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
         }
 
-        @media (max-width: 500px) {
-            .grid { grid-template-columns: 1fr; }
+        .reminder-block {
+            background: #fff7eb;
+            border-radius: 1.2rem;
+            padding: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 200px;
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #ddecd8;
+            padding: 1.2rem;
+        }
+
+        .contact-section {
+            background: #eef3ec;
+            border-radius: 1.2rem;
+            padding: 1.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .contact-line {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .footer-blessing {
+            background: #f5f1e6;
+            margin-top: 2rem;
+            padding: 1.8rem;
+            text-align: center;
+            border-radius: 1.5rem;
+        }
+
+        .signature {
+            margin-top: 1rem;
+            font-weight: 500;
+            border-top: 1px dashed #cbdcc5;
+            padding-top: 1rem;
+        }
+
+        .btn-prayer {
+            background: #f9c56b20;
+            border-left: 4px solid #f9c56b;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        hr {
+            margin: 1.2rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #d4e2cf, transparent);
+        }
+
+        @media (max-width: 620px) {
+            body {
+                padding: 1rem;
+            }
+            .content-inner {
+                padding: 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="header">
-            <h1>🌟 Sunday School Parent Note 🌟</h1>
-            <p>Uzima Class • March 29th, 2026</p>
+    <div class="note-card">
+        <div class="hero">
+            <h1>
+                🌟 SUNDAY SCHOOL PARENT NOTE 🌟
+            </h1>
+            <div class="date">📅 March 29th, 2026</div>
         </div>
 
-        <div class="content-padding">
-            <div class="intro">
-                Dear Parents & Guardians, <br>
-                Grace and peace to you! Thank you for faithfully bringing your children to Sunday School[cite: 6, 7]. Your partnership means everything to us as we raise these little ones in the knowledge and love of Jesus Christ[cite: 8].
+        <div class="content-inner">
+            <!-- greeting -->
+            <div class="greeting">
+                <p>💌 <strong>Dear Parents & Guardians,</strong></p>
+                <p>Grace and peace to you! Thank you for faithfully bringing your children to Sunday School. Your partnership means everything to us as we raise these little ones in the knowledge and love of Jesus Christ.</p>
             </div>
 
-            <h2>✝️ Today's Lesson</h2>
-            <div class="section-box">
-                <strong>Jesus Died and Rose Again!</strong> [cite: 11]<br>
-                <small>Scripture: Matthew 27:32-56 & 28:1-10 [cite: 12, 13]</small>
-                <ul>
-                    <li>Jesus was hurt on a cross for our sins[cite: 14].</li>
-                    <li>He was placed in a tomb with a big stone[cite: 15].</li>
-                    <li>On Sunday morning, Jesus came back to life! [cite: 16]</li>
-                    <li>The tomb was EMPTY — He is Risen! [cite: 17]</li>
-                </ul>
-            </div>
-
-            <h2>🎨 Today's Craft</h2>
-            <p><strong>"God's Love for Me"</strong>: Children traced their hands next to a cross to remember that God's love reaches to THEM personally! [cite: 18, 19]</p>
-
-            <div class="verse-box">
-                "Let us fix our eyes on Jesus... who for the joy set before Him endured the cross." [cite: 20, 21]<br>
-                <span style="font-weight: normal; font-size: 0.9rem;">— Hebrews 12:2 [cite: 22]</span>
-            </div>
-
-            <div class="grid">
-                <div class="reminder-card">
-                    <strong>💬 Ask Your Child:</strong>
-                    <ul>
-                        <li>What happened to Jesus on the cross? [cite: 24]</li>
-                        <li>Why is Easter happy and not sad? [cite: 26]</li>
-                        <li>How high does God's love reach? [cite: 27]</li>
+            <!-- LESSON section -->
+            <div class="section">
+                <div class="section-title">
+                    ✝️ TODAY'S LESSON: Jesus Died and Rose Again!
+                </div>
+                <div class="scripture">
+                    📖 Matthew 27:32-56 (Crucifixion) &nbsp;|&nbsp; Matthew 28:1-10 (Resurrection)
+                </div>
+                <div class="info-card" style="background:#f8fef5;">
+                    <h3>🌿 What We Learned</h3>
+                    <ul class="bullet-list">
+                        <li>✝️ Jesus was hurt on a cross for our sins</li>
+                        <li>🪦 Jesus died and was placed in a tomb</li>
+                        <li>⛰️ A big stone was rolled in front of the tomb</li>
+                        <li>☀️ On Sunday morning, Jesus came back to life!</li>
+                        <li>✨ The tomb was <strong>EMPTY</strong> — He is Risen!</li>
                     </ul>
                 </div>
-                <div class="reminder-card">
-                    <strong>🏠 Family Worship:</strong>
-                    Read Matthew 28:1-10 together and pray: "Thank you God for loving us. Help us obey you! Amen!" [cite: 28, 29]
+            </div>
+
+            <!-- CRAFT SECTION -->
+            <div class="section">
+                <div class="section-title">
+                    🎨 Today's Craft
+                </div>
+                <div class="info-card" style="background:#fffbf0;">
+                    <h3>✋ "God's Love for Me"</h3>
+                    <p>Children traced their hand next to a cross to remember that God's love reaches to <strong>THEM personally!</strong> Each little hand reminds us that Jesus’ sacrifice is for every child. 💖</p>
                 </div>
             </div>
 
-            <h2>📢 Important Reminders</h2>
-            <div class="grid">
-                <div class="reminder-card">
-                    <strong>💧 Hydration</strong>
-                    It is HOT in the afternoon; please carry water in a water bottle[cite: 33, 34, 35].
+            <!-- MEMORY VERSE (elevated) -->
+            <div class="memory-verse">
+                <p>📜 “Let us fix our eyes on Jesus... who for the joy set before Him endured the cross.”</p>
+                <div class="ref">— Hebrews 12:2</div>
+            </div>
+
+            <!-- TWO COLUMNS: ASK YOUR CHILD + FAMILY WORSHIP -->
+            <div class="two-columns">
+                <div class="col">
+                    <h3 style="color:#2c6e2c; margin-bottom: 12px;">💬 Ask Your Child Tonight</h3>
+                    <ul class="bullet-list" style="list-style-type: none; padding-left: 0;">
+                        <li>🔹 “What happened to Jesus on the cross?”</li>
+                        <li>🔹 “What happened on Sunday morning?”</li>
+                        <li>🔹 “Why is Easter happy and not sad?”</li>
+                        <li>🔹 “How high does God's love reach?”</li>
+                    </ul>
                 </div>
-                <div class="reminder-card">
-                    <strong>🚽 Focus</strong>
-                    Please take your child to the washroom BEFORE class[cite: 36, 37].
+                <div class="col">
+                    <h3 style="color:#2c6e2c; margin-bottom: 12px;">🏠 Family Worship Idea</h3>
+                    <p>Read <strong>Matthew 28:1-10</strong> together and pray:</p>
+                    <p style="background:#fcf3dd; padding: 10px; border-radius: 20px; font-style: italic;">“Thank you God for loving us. Help us obey you! Amen.”</p>
                 </div>
             </div>
-            <p style="margin-top: 15px;"><strong>⏰ Pick-up:</strong> Please arrive on time[cite: 40].</p>
 
-            <h2>🗓️ Coming Up</h2>
-            <div class="section-box" style="background: var(--accent-green);">
-                <strong>April 5th: Family Easter Sunday</strong> [cite: 43]<br>
-                We all gather together in the adult service (big church)[cite: 44].
+            <!-- IMPORTANT REMINDERS SECTION (three detailed reminders) -->
+            <div class="section">
+                <div class="section-title">
+                    📢 IMPORTANT REMINDERS
+                </div>
+                <div class="card-grid">
+                    <div class="reminder-block" style="background:#fff0e0;">
+                        <h3>💧 WATER BOTTLE</h3>
+                        <p>We meet in the <strong>AFTERNOON</strong> when it tends to be HOT. Please carry some water in a water bottle.<br>Hydration helps children stay focused and comfortable during learning.</p>
+                    </div>
+                    <div class="reminder-block" style="background:#fff0e0;">
+                        <h3>🚽 BATHROOM BEFORE CLASS</h3>
+                        <p>Please take your child to the washroom <strong>BEFORE dropping them off</strong>. This helps avoid disruptions during the lesson and ensures your child can focus on learning about Jesus.</p>
+                    </div>
+                    <div class="reminder-block" style="background:#fff0e0;">
+                        <h3>⏰ PICK-UP TIME</h3>
+                        <p>Please arrive on time for pick-up. If someone else will pick up your child, please inform us in advance. </p>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="footer">
-            <p style="font-size: 1.1rem; color: var(--primary-green); font-weight: bold;">
-                "He is not here; he has risen, just as he said." [cite: 56]<br>
-                <span style="font-weight: normal; font-size: 0.9rem;">— Matthew 28:6</span>
-            </p>
+            <!-- COMING UP NEXT WEEK -->
+            <div class="section">
+                <div class="section-title">
+                    🗓️ COMING UP NEXT WEEK (April 5th, 2026)
+                </div>
+                <div class="info-card" style="background:#eef0e3; text-align: center;">
+                    <h3>🌷 Family Easter Sunday 🌷</h3>
+                    <p>We all gather in the adult service (big church) to celebrate the risen King together! Don't miss this joyful family worship.</p>
+                </div>
+            </div>
+
+            <!-- PRAYER REQUEST (full as per original) -->
+            <div class="section">
+                <div class="section-title">
+                    🙏 Prayer Request?
+                </div>
+                <div class="btn-prayer">
+                    <p>If you have any prayer needs, please don't hesitate to share. We are here to pray with and for you! Your family matters to our church family.</p>
+                </div>
+            </div>
+
+            <!-- CONTACT INFO with extended details (pastors & ministries) -->
+            <div class="section">
+                <div class="section-title">
+                    📞 Contact Information
+                </div>
+                <div class="contact-section">
+                    <div class="contact-line">📱 <strong>Mamlaka Hotline care Number:</strong> +254724555527</div>
+                    <div class="contact-line">✉️ <strong>Teacher's Email:</strong> lewismgichuki@gmail.com</div>
+                    <div class="contact-line">🤝 <strong>Pastoral Care:</strong> Feel free to reach out to the pastors across the various ministries — particularly children, care and prayer ministries. We’re one family in Christ!</div>
+                </div>
+            </div>
+
+            <!-- FINAL ENCOURAGEMENT & PARTNERSHIP -->
+            <div class="footer-blessing">
+                <p style="font-size:1.05rem;">✨ Thank you for partnering with us in your child's faith journey. Together, we are raising a generation that knows, loves, and follows Jesus Christ! ✨</p>
+                <div style="margin: 1rem 0 0.8rem; font-size: 1.3rem; font-weight: 400;">🕊️</div>
+                <div style="font-size: 1.1rem; font-weight: 500; color: #2d5a27;">“He is not here; he has risen, just as he said.”</div>
+                <div style="margin-top: 0.2rem; font-weight: 400;">— Matthew 28:6</div>
+                <div class="signature">
+                    <p>Blessings,<br>
+                    <strong>Lewis Gichuki</strong><br>
+                    Sunday School Teacher<br>
+                    Uzima Class</p>
+                </div>
+            </div>
             
-            <div class="contact-info">
-                <strong>Lewis Gichuki</strong> [cite: 59]<br>
-                Sunday School Teacher, Uzima Class [cite: 60, 61]<br>
-                <br>
-                📞 Hotline: +254724555527 [cite: 49]<br>
-                📧 Email: lewismgichuki@gmail.com [cite: 50]
+            <!-- subtle divider + reminder of hope -->
+            <hr>
+            <div style="text-align: center; font-size: 0.75rem; color: #6f7c6a; padding: 0.5rem 0 1rem;">
+                🌿 He is risen indeed! 🌿
             </div>
-            <p style="font-size: 0.8rem; margin-top: 20px;">Thank you for partnering with us in your child's faith journey[cite: 54].</p>
         </div>
     </div>
-
 </body>
 </html>
